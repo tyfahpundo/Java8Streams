@@ -14,5 +14,9 @@ public class Demo {
 //        System.out.println(distinctVehicles);
 
         vehiclesList.stream().distinct().forEach(value -> System.out.println(value));
+
+        //count
+        long count = vehiclesList.stream().distinct().count();
+        System.out.println(count);
     }
 }
