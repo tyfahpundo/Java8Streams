@@ -18,5 +18,9 @@ public class Demo {
         //count
         long count = vehiclesList.stream().distinct().count();
         System.out.println(count);
+
+        //limit()
+        List<String>limited = vehiclesList.stream().limit(3).collect(Collectors.toList());
+        System.out.println(limited);
     }
 }
