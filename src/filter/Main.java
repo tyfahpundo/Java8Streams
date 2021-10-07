@@ -26,5 +26,13 @@ public class Main {
                 .mapToInt(s-> s.getScore())
                 .average().getAsDouble();
         System.out.println("Avearge score: "+average);
+        //getting the top student
+        List<Student> topStudent = listStudents.stream()
+                .filter(s->s.getScore()>=70)
+                .sorted()
+                .limit(1)
+                .collect(Collectors.toList());
+        System.out.println("The top student by score: ");
+        topStudent.forEach(s-> System.out.println(s));
     }
 }
