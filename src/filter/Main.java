@@ -1,0 +1,23 @@
+package filter;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Student> listStudents = new ArrayList<>();
+        listStudents.add(new Student("tyfah",75));
+        listStudents.add(new Student("mason",95));
+        listStudents.add(new Student("monalisa",65));
+        listStudents.add(new Student("John",25));
+        listStudents.add(new Student("Marry",55));
+
+        //Find students whose score is >=70
+        List<Student> goodStudents = new ArrayList<>();
+        goodStudents = listStudents.stream()
+                .filter(s-> s.getScore()>=70)
+                .collect(Collectors.toList());
+        goodStudents.stream().forEach(s -> System.out.println(s));
+    }
+}
