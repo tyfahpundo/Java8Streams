@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
+        double sum = 0.0;
         List<Student> listStudents = new ArrayList<>();
         listStudents.add(new Student("tyfah",75));
         listStudents.add(new Student("mason",95));
@@ -19,5 +20,11 @@ public class Main {
                 .filter(s-> s.getScore()>=70)
                 .collect(Collectors.toList());
         goodStudents.stream().forEach(s -> System.out.println(s));
+
+        //Calculate average score of all students
+        double average = listStudents.stream()
+                .mapToInt(s-> s.getScore())
+                .average().getAsDouble();
+        System.out.println("Avearge score: "+average);
     }
 }
